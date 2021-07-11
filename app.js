@@ -22,7 +22,17 @@ const indexRouter = require('./src/routes/index')
 app.use('/', indexRouter)
 
 const apiRouter = require('./src/routes/api')
-app.use('/geo4kids', apiRouter)
+app.use('/api', apiRouter)
+
+const fruitsRouter = require('./src/routes/fruits')
+app.use('/fruits4kids', fruitsRouter)
+
+const geoRouter = require('./src/routes/geo')
+app.use('/geo4kids', geoRouter)
+
+const mathRouter = require('./src/routes/math')
+app.use('/math4kids', mathRouter)
+
 
 app.use(logger('dev'));
 app.use(express.json());
