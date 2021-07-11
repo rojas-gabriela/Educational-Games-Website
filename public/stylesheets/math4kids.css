@@ -45,6 +45,7 @@ body {
     display: flex;
     font-size: 1rem;
 }
+
 .score-panel span {
     padding: 0.5em;
 }
