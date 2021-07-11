@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 router.get('', async(req, res) => {
     const countriesAPI = await fetchCountries();
-    console.dir(countriesAPI, { depth: null })
+    //console.dir(countriesAPI, { depth: null })
     res.json({ countries : countriesAPI });
 })
 
