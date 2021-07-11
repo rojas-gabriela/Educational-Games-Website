@@ -22,7 +22,10 @@
             <h1>Geo 4 Kids</h1>
         </div>
     </header>
-    <div class="container">
+    <section class="container">
+        <div class="score-panel" >
+        	score: <span id="score">0</span>
+        </div>
         <div class="question">
             <span>What is the capital of...</span>
             <h2 id="country-name">???</h2>
@@ -31,21 +34,16 @@
                 <input id="submit-button" type="submit" value="guess">
             </form>
         </div>
-        <footer>
-            <p>
-              Score: <span id="score">0</span>
-            </p>
-        </footer>
-    </div>
+    </section>
 
-    <div class="overlay">
+    <section class="overlay">
         <div class="overlay-inner">
             <p>Womp womp!</p>
             <h3>The correct answer is:</h3>
-            <h2 class="correct-answer">???</h2>
+            <h2 id="correct-answer">???</h2>
             <button class="play-again">Start Over</button>
         </div>
-    </div>
+    </section>
     <script type='module' src="/javascripts/geo4kids.js"></script>
 </body>
 </html>

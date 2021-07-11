@@ -9,11 +9,11 @@ router.get('', async(req, res) => {
 })
 
 const fetchCountries  = async () => {
-    const response = await fetch('https://restcountries.eu/rest/v2/all');
+    const response = await fetch('https://restcountries.herokuapp.com/api/v1');
     const countriesJson = await response.json();
   
     return  countriesJson.map((country) => {
-      return { name: country.name, capital: country.capital }
+      return { name: country.name.common, capital: country.capital }
     })
 }
 

@@ -43,6 +43,19 @@ body {
     -ms-flex-pack: center;
 }
 
+.score-panel {
+    align-items: center;
+    text-align: center;
+    padding: 0.5em;
+    padding-bottom: 1%;
+    display: flex;
+    font-size: 1rem;
+}
+
+.score-panel span {
+    padding: 0.5em;
+}
+
 .question {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -95,14 +108,8 @@ body {
     -o-transition: background 0.25s ease;
     transition: background 0.25s ease; }
     
-.question input[type=submit]:hover {
+.question input[type=submit] .hover {
     background: #8FC63F; 
-}
-
-footer {
-    align-self: flex-start;
-    margin: 1.5em;
-    color: grey;
 }
 
 /* GameOver Overlay */
