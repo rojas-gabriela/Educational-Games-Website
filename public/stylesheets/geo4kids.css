@@ -166,4 +166,13 @@ body.overlay-is-open .main-ui {
 .play-again:hover {
     background-color: rgb(243, 243, 243); 
     color: #2ab7ca;
-  }
+}
+
+  /* For Tablets and larger screens */
+
+@media (min-width: 1024px) {
+    .navbar {
+        font-size: 2em;
+        padding: 1.5%;
+    }
+}
