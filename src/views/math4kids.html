@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/myapp/public/stylesheets/math4kids.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <title>Games4Kids - Math4Kids</title>
+</head>
+<body>
+    <audio id="wrong">
+        <source src="/myapp/public/images/wrong.mp3">
+    </audio>
+    <audio id="correct">
+        <source src="/myapp/public/images/correct.mp3">
+    </audio>
+    <header>
+        <div class="navbar">
+            <h1>Math 4 Kids</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="score-panel" >
+        	score: <span id="score">0</span>
+            lives: <span id="lives">3</span>
+        </div>
+        <div class="equation">
+            <h1 id="number1" style="color: #fe4a49">0</h1>
+            <h1 id="operator" style="color: #2ab7ca;">+</h1>
+            <h1 id="number2" style="color: #fed766">0</h1>
+            <h1 style="color: #F66F00">=</h1>
+            <h1 id="result" style="color: gray">?</h1>
+        </div>
+        <div class="answer-options">
+            <div class="options">
+                <h1 id="option1">1</h1>
+            </div>
+            <div class="options">
+                <h1 id="option2">2</h1>
+            </div>
+            <div class="options">
+                <h1 id="option3">3</h1>
+            </div>
+            <div class="options">
+                <h1 id="option4">4</h1>
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="overlay-inner">
+            <p id="end-message">Sorry! You lost.</p>
+            <button class="reset-button">Start Over</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="/myapp/public/javascripts/math4kids.js"></script>
+</body>
+</html>

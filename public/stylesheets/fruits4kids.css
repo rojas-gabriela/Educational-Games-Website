@@ -1,0 +1,287 @@
+html,
+body {
+    width: 100%;
+	height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Typography & Background Color */
+
+body {
+    font-family: 'Luckiest Guy';
+    background-color: #e6e6e6;
+}
+
+/* Navigation Bar Layout */
+
+.navbar {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+    background-color: #8FC63F;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Layout */ 
+
+.container {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    margin: 0.8rem;
+    background-color: white;
+}
+
+.score-panel {
+    align-items: center;
+    text-align: center;
+    padding: 4%;
+    padding-bottom: 1%;
+    display: flex;
+    font-size: 1rem;
+}
+
+/* Styles for the deck of cards */
+
+.deck {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 5% 5%;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 20%;
+    margin: 1%;
+}
+
+.deck img {
+    height: 60%;
+    width: 60%;
+}
+
+.deck .card {
+    display: flex;
+    width: 15vw;
+    height: 15vw;
+	background: #2ab7ca;
+	font-size: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.3);
+}
+
+.deck .card img{
+    visibility: hidden;
+}
+
+.deck .card.open {
+	transform: rotateY(0);
+	background: #fed766;
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.open img{
+	visibility: visible;
+}
+
+.deck .card.match {
+	cursor: default;
+	background: #8FC63F;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.match img {
+    visibility: visible;
+}
+
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+	background: #fe4a49;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+/* Game Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255, .82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .33s ease-out;
+    transform: scale(1.2);
+}
+
+body.overlay-is-open .overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+body.overlay-is-open .main-ui {
+    filter: blur(4px);
+}
+
+.overlay-inner p {
+    font-size: 1.8rem;
+    color: #fe4a49;
+    padding: 0.4rem
+}
+
+.play-again{
+    background-color: #2ab7ca; 
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Luckiest Guy'
+  }
+
+.play-again:hover {
+    background-color: rgb(243, 243, 243); 
+    color: #2ab7ca;
+}
+
+/* Animations */
+
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes pulse {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.2, 1.2, 1.2);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+/* Media queries */
+
+/* For Tablets and larger screens */
+
+@media (min-width: 1024px) {
+
+    .navbar {
+        font-size: 1.5em;
+        padding: 0.2%;
+    }
+
+    .score-panel {
+        font-size: 1.5em;
+        padding: 2%;
+        padding-bottom: 0.2%;
+    }
+
+	.deck {
+        width: 50%;
+        grid-template-columns: repeat(4, 7vw);
+        grid-template-rows: repeat(4, 7vw);
+        justify-items: center;
+        align-items: center;
+        padding: 0;
+        padding-left: 13vw;
+        padding-bottom: 7%;
+	}
+    .deck img {
+        height: 50%;
+        width: 50%;
+    }
+	.deck .card {
+	    width: 100%;
+        height: 100%;
+	}
+
+	.popup {
+		width: 60%;
+	}
+}

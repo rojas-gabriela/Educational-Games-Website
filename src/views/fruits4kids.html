@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/fruits4kids.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <title>Games4Kids - Fruits4Kids</title>
+</head>
+<body>
+    <audio id="wrong">
+        <source src="/images/wrong.mp3">
+    </audio>
+    <audio id="correct">
+        <source src="/images/correct.mp3">
+    </audio>
+    <audio id="select-card">
+        <source src="/images/card-selected.mp3">
+    </audio>
+    <header>
+        <div class="navbar">
+            <h1>Fruits 4 Kids</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="score-panel">
+        	<span class="moves" style="padding: 0.4rem;">0</span> Move(s)
+            <div class="restart" onclick=startGame() style="padding: 0.4rem; padding-left: 1rem;">
+        		<i class="fa fa-repeat"></i>
+        	</div>
+        </div>
+        <ul class="deck" id="card-deck">
+            <li class="card" type="apple">
+                <img src = "/images/fruits-icons/001-apple.svg" alt="apple"/>
+            </li>
+            <li class="card" type="watermelon">
+                <img src = "/images/fruits-icons/024-watermelon.svg" alt="watermelon"/>
+            </li>
+            <li class="card match" type="lemon">
+                <img src = "/images/fruits-icons/012-lemon.svg" alt="lemon"/>
+            </li>
+            <li class="card" type="banana" >
+                <img src = "/images/fruits-icons/003-banana.svg" alt="banana"/>
+            </li>
+            <li class="card" type="grapes">
+                <img src = "/images/fruits-icons/009-grapes.svg" alt="grapes"/>
+            </li>
+            <li class="card" type="apple">
+                <img src = "/images/fruits-icons/001-apple.svg" alt="apple"/>
+            </li>
+            <li class="card" type="pineapple">
+                <img src = "/images/fruits-icons/017-pineapple.svg" alt="pineapple"/>
+            </li>
+            <li class="card match" type="lemon">
+                <img src = "//images/fruits-icons/012-lemon.svg" alt="lemon"/>
+            </li>
+            <li class="card" type="watermelon">
+                <img src = "/images/fruits-icons/024-watermelon.svg" alt="watermelon"/>
+            </li>
+            <li class="card" type="strawberry">
+                <img src = "/images/fruits-icons/023-strawberry.svg" alt="strawberry"/>
+            </li>
+            <li class="card" type="banana" >
+                <img src = "/images/fruits-icons/003-banana.svg" alt="banana"/>
+            </li>
+            <li class="card" type="strawberry">
+                <img src = "/images/fruits-icons/023-strawberry.svg" alt="strawberry"/>
+            </li>
+            <li class="card" type="pineapple">
+                <img src = "/images/fruits-icons/017-pineapple.svg" alt="pineapple"/>
+            </li>
+            <li class="card open show" type="kiwi">
+                <img src = "/images/fruits-icons/011-kiwi.svg" alt="kiwi"/>
+            </li>
+            <li class="card" type="grapes">
+                <img src = "/images/fruits-icons/009-grapes.svg" alt="grapes"/>
+            </li>
+            <li class="card open show" type="kiwi">
+                <img src = "/images/fruits-icons/011-kiwi.svg" alt="kiwi"/>
+            </li>
+        </ul>
+    </div>
+
+    <div class="overlay">
+        <div class="overlay-inner">
+            <p>Congratulations you're a winner!</p>
+            <p>You made <span id=finalMoves> </span> moves </p>
+            <button class="play-again">Start Over</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/javascripts/fruits4kids.js"></script>
+</body>
+</html>

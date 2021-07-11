@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/geo4kids.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <title>Games4Kids - Geo4Kids</title>
+</head>
+<body>
+    <audio id="wrong">
+        <source src="/images/wrong.mp3">
+    </audio>
+    <audio id="correct">
+        <source src="/images/correct.mp3">
+    </audio>
+    <header>
+        <div class="navbar">
+            <h1>Geo 4 Kids</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="question">
+            <span>What is the capital of...</span>
+            <h2 id="country-name">???</h2>
+            <form autocomplete="off" class="answer-form">
+                <input type="text" name="capital-guess" id="capital-guess" placeholder="Capital City..." required>
+                <input type="submit" value="Guess">
+            </form>
+        </div>
+        <footer>
+            <p>
+              Score: <span class="score">0</span>
+            </p>
+        </footer>
+    </div>
+
+    <div class="overlay">
+        <div class="overlay-inner">
+            <p>Womp womp!</p>
+            <h3>The correct answer is:</h3>
+            <h2 class="correct-answer">???</h2>
+            <button class="play-again">Start Over</button>
+        </div>
+    </div>
+    <script>var name = "<%= countries %>";</script>
+    <script type='module' src="/javascripts/geo4kids.js">
+    console.log(countries)
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+html,
+body {
+    width: 100%;
+	height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Typography & Background Color */
+
+body {
+    font-family: 'Luckiest Guy';
+    background-color: #e6e6e6;
+}
+
+/* Navigation Bar Layout */
+
+.navbar {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 1%;
+    background-color: #fe4a49;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Layout */ 
+
+.container {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    margin: 0.8rem;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+.score-panel {
+    align-items: center;
+    text-align: center;
+    padding: 1.5em;
+    padding-bottom: 1%;
+    display: flex;
+    font-size: 1rem;
+}
+.score-panel span {
+    padding: 0.5em;
+}
+
+.equation {
+    height: 100%;
+    display: flex;
+    padding-bottom: 0.5em;
+}
+
+.equation h1 {
+    display: inline;
+    padding: 0.1em;
+    margin: 0;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: repeat(2, 25vw);
+    grid-template-rows: repeat(2, 25vw);
+    gap: 0.8em 0.8em;
+    padding-bottom: 10%;
+}
+
+.options {
+    display: flex;
+}
+
+.options h1 {
+    display: flex;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#option1 {
+    width: 100%;
+    height: 100%;
+    background-color: #fe4a49;
+    transition: 1s;
+}
+
+#option1 .hover {
+    color: #fe4a49;
+    background-color: white;
+}
+
+#option2 {
+    width: 100%;
+    height: 100%;
+    background-color: #2ab7ca;
+    transition: 1s;
+}
+
+#option2 .hover {
+    color: #2ab7ca;
+    background-color: white;
+}
+
+#option3 {
+    width: 100%;
+    height: 100%;
+    background-color: #fed766;
+    transition: 1s;
+}
+
+#option3 .hover {
+    color: #fed766;
+    background-color: white;
+}
+
+#option4 {
+    width: 100%;
+    height: 100%;
+    background-color: #8FC63F;
+    transition: 1s;
+}
+
+#option4 .hover {
+    color: #8FC63F;
+    background-color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255, .82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .33s ease-out;
+    transform: scale(1.2);
+}
+
+body.overlay-is-open .overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+body.overlay-is-open .main-ui {
+    filter: blur(4px);
+}
+
+#end-message {
+    font-size: 3.5rem;
+    color: #fe4a49;
+}
+
+.reset-button {
+    background-color: #2ab7ca; 
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Luckiest Guy'
+}
+
+.reset-button:hover {
+    background-color: rgb(243, 243, 243); 
+    color: #2ab7ca;
+}
+
+/* Media queries */
+
+@media (min-width: 375px) {
+
+    .navbar {
+        font-size: 1em;
+    }
+
+    .score-panel {
+        font-size: 0.9em;
+        padding: 2%;
+        padding-bottom: 0.2%;
+    }
+
+    .answer-options {
+        grid-template-columns: repeat(2, 22vw);
+        grid-template-rows: repeat(2, 22vw);
+    }
+}
+
+@media (min-width: 420px) {
+    .answer-options {
+        grid-template-columns: repeat(2, 20vw);
+        grid-template-rows: repeat(2, 20vw);
+    }
+}
+
+@media (min-width: 768px) {
+    .answer-options {
+        grid-template-columns: repeat(2, 15vw);
+        grid-template-rows: repeat(2, 15vw);
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        font-size: 1.5em;
+        padding: 0.2%;
+    }
+    .container {
+        font-size: 2em;
+    }
+    .score-panel {
+        padding: 2%;
+        padding-bottom: 0.2%;
+    }
+
+    .answer-options {
+        grid-template-columns: repeat(2, 15vw);
+        grid-template-rows: repeat(2, 15vw);
+    }
+}
+
+@media (min-width: 1440px) {
+    .answer-options {
+        grid-template-columns: repeat(2, 10vw);
+        grid-template-rows: repeat(2, 10vw);
+    }
+}
